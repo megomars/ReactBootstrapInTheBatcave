@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <title>First example of bootstrap and react</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     
@@ -12,57 +12,44 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+<style>
+    .row div{
+    background-color:#fb9d04;
+    border:1px solid black;
+}
+
+.row{
+    height:500px;
+    background-color:bisque;
+}
+</style>
 </head>
   <body>
 
-    <div id="root">
-    </div>
-
-    <div id="hello">
+    <div id="bootstrapcode">
     </div>
 
     <script type="text/babel">
-    //Just store some user data
-    var user = {
-        name:"John Doe",
-        city:"Dallas, TX"
-    }
 
-    // Place your components here
-
-    //First component
-    class Hello extends React.Component{
-        render(){
-            return <h1>Hello World as a component!</h1>;
-        }
-    }
-    //Second component
-    class UserName extends React.Component{
-        render(){
-            return <h1>{this.props.name}</h1>
-        }
-    }
-    //Combined components
-    class Combined extends React.Component{
-        render(){
-            return(<div>
-            <Hello/>
-            <UserName name={this.props.user.name}/>
-            </div>);
-        }
-    }
+    //store some bootstrap code here as an object
+    var somebootstrap = <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                This is burnt in 1
+            </div>
+            <div class="col-12 col-md-6">
+                This is burnt in 1
+            </div>
+        </div>
+    </div>
 
     // The all important method
-    // The first argument is the component we want to render,
+    // The first argument is the component/variable we want to render,
     // The second argument is the real DOM element that we want to inject
+ 
     ReactDOM.render(
-        <Combined user={user}/>,
-        document.getElementById('root')
-    );
-
-    ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('hello')
+        somebootstrap,
+        document.getElementById('bootstrapcode')
     );
     </script>
     <!--
