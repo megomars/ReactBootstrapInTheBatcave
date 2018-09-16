@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive theme</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!-- Bootstrap V3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- React bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.32.4/react-bootstrap.min.js"></script>
+</head>
+  <body>
+
+    <div id="root">
+    </div>
+
+
+<script type="text/babel">
+    // Place your reactbootstrap here
+    var Grid= ReactBootstrap.Grid;
+    var Row= ReactBootstrap.Row;
+    var Col= ReactBootstrap.Col;
+    var bootstrapReact = (
+        <Grid>
+        <Row className="show-grid">
+            <Col xs={12} md={8}>
+            <code>{'<Col xs={12} md={8} />'};</code>
+            </Col>
+            <Col xs={6} md={4}>
+            <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+        </Row>
+
+        <Row className="show-grid">
+            <Col xs={6} md={4}>
+            <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+            <Col xs={6} md={4}>
+            <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+            <Col xsHidden md={4}>
+            <code>{'<Col xsHidden md={4} />'}</code>
+            </Col>
+        </Row>
+
+        <Row className="show-grid">
+            <Col xs={6} xsOffset={6}>
+            <code>{'<Col xs={6} xsOffset={6} />'}</code>
+            </Col>
+        </Row>
+
+        <Row className="show-grid">
+            <Col md={6} mdPush={6}>
+            <code>{'<Col md={6} mdPush={6} />'}</code>
+            </Col>
+            <Col md={6} mdPull={6}>
+            <code>{'<Col md={6} mdPull={6} />'}</code>
+            </Col>
+        </Row>
+        </Grid>);
+
+    // The all important method
+    // The first argument is the component we want to render,
+    // The second argument is the real DOM element that we want to inject
+    ReactDOM.render(
+        bootstrapReact,
+        document.getElementById('root')
+    );
+</script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      http://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      http://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+  </body>
+</html>
